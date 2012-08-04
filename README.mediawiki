@@ -7,7 +7,7 @@ Original source code version from here: [http://openfoamwiki.net/index.php/Main_
 
 This repository brings you minor adjustments to this code for keeping up with the latest OpenFOAM releases. After you run <code>git clone</code>, use <code>git branch -a</code> to see what OpenFOAM versions have been tested.
 
-'''Note''': The master branch works fine with OpenFOAM 1.7.x, 2.0.x and 2.1.x.
+'''Note''': The master branch works fine with OpenFOAM 1.7.x, 2.0.x and 2.1.x. It also works with 1.6-ext.
 
 Keep in mind that this is a contribution made in the community and not part of OpenFOAM(R).
 
