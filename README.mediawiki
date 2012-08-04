@@ -7,17 +7,16 @@ Original source code version from here: [http://openfoamwiki.net/index.php/Main_
 
 This repository brings you minor adjustments to this code for keeping up with the latest OpenFOAM releases. After you run <code>git clone</code>, use <code>git branch -a</code> to see what OpenFOAM versions have been tested.
 
+Note: This branch seems to work fine with OpenFOAM 2.1.x.
+
 Keep in mind that this is a contribution made in the community and not part of OpenFOAM(R).
 
 = Usage instructions =
 
 <ol><li>Download, either using <code>git</code> or use the ''Downloads'' pseudo-button on the top right at [https://github.com/wyldckat/transientSimple].</li>
-<li>Depending on whether you're using 1.6-ext or 2.1.x, go into the respective <code>CJsnappyHexMesh*</code> folder.</li>
-<li>Run: <pre>wmake</pre></li>
-<li>Go to the respective case folder <code>tutorials/SnappyTestCase-*</code> and there you can run one of the following 2 commands: <pre>./Allrun
-./Allrun2</pre></li>
-<li>Read the comments in <code>Allrun2</code> to learn the differences between the two scripts.</li>
-<li>Reset the case folder by running: <pre>./Allclean</pre></li>
+<li>Run: <pre>wmake transientSimpleFoam</pre></li>
+<li>Clean up: <pre>wclean transientSimpleFoam</pre></li>
+<li>Go to the page [http://openfoamwiki.net/index.php/Main_ContribExamples/PISOvsTransientSimple] for more.</li>
 </ol>
 
 = License =
