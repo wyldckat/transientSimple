@@ -1,0 +1,25 @@
+<br />
+
+= Description =
+Brought to my attention here: [http://www.cfd-online.com/Forums/openfoam/105601-transient-simplefoam.html]
+
+Original source code version from here: [http://openfoamwiki.net/index.php/Main_ContribExamples/PISOvsTransientSimple]
+
+This repository brings you minor adjustments to this code for keeping up with the latest OpenFOAM releases. After you run <code>git clone</code>, use <code>git branch -a</code> to see what OpenFOAM versions have been tested.
+
+Keep in mind that this is a contribution made in the community and not part of OpenFOAM(R).
+
+= Usage instructions =
+
+<ol><li>Download, either using <code>git</code> or use the ''Downloads'' pseudo-button on the top right at [https://github.com/wyldckat/transientSimple].</li>
+<li>Depending on whether you're using 1.6-ext or 2.1.x, go into the respective <code>CJsnappyHexMesh*</code> folder.</li>
+<li>Run: <pre>wmake</pre></li>
+<li>Go to the respective case folder <code>tutorials/SnappyTestCase-*</code> and there you can run one of the following 2 commands: <pre>./Allrun
+./Allrun2</pre></li>
+<li>Read the comments in <code>Allrun2</code> to learn the differences between the two scripts.</li>
+<li>Reset the case folder by running: <pre>./Allclean</pre></li>
+</ol>
+
+= License =
+This is bound to the same license as OpenFOAM, namely GPLv3. Which means that you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+See http://www.gnu.org/licenses/ for more information about GPL.
