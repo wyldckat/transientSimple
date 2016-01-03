@@ -11,7 +11,7 @@ This repository brings you minor adjustments to this code for keeping up with th
 
 Keep in mind that this is a contribution made in the community and not part of OpenFOAM(R).
 
-This repository at [https://github.com/wyldckat/transientSimple] was brought to you by Bruno Santos (wyldckat@github working at [blueCAPE Lda](www.bluecape.com.pt)).
+This repository at [https://github.com/wyldckat/transientSimple] was brought to you by Bruno Santos (wyldckat@github working at [http://www.bluecape.com.pt blueCAPE Lda]).
 
 = Usage instructions =
 
