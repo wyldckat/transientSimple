@@ -33,8 +33,8 @@ Description
 
 #include "fvCFD.H"
 #include "singlePhaseTransportModel.H"
-//#include "incompressible/RASModel/RASModel.H"
-#include "turbulenceModel.H"
+#include "turbulentTransportModel.H"
+#include "pisoControl.H"
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
@@ -45,6 +45,9 @@ int main(int argc, char *argv[])
 
 #   include "createTime.H"
 #   include "createMesh.H"
+
+    pisoControl piso(mesh);
+
 #   include "createFields.H"
 #   include "initContinuityErrs.H"
 
@@ -56,11 +59,11 @@ int main(int argc, char *argv[])
     {
         Info<< "Time = " << runTime.timeName() << nl << endl;
 
-#       include "readPISOControls.H"
 #       include "CourantNo.H"
 
-        // Pressure-velocity SIMPLE corrector loop
-        for (int corr = 0; corr < nCorr; corr++)
+        // Pressure-velocity SIMPLE corrector loop, although by using
+        // PISO corrector controls...
+        while (piso.correct())
         {
             // Momentum predictor
 
@@ -86,7 +89,7 @@ int main(int argc, char *argv[])
             p.storePrevIter();
 
             // Non-orthogonal pressure corrector loop
-            for (int nonOrth=0; nonOrth<=nNonOrthCorr; nonOrth++)
+            while (piso.correctNonOrthogonal())
             {
                 fvScalarMatrix pEqn
                 (
@@ -96,7 +99,7 @@ int main(int argc, char *argv[])
                 pEqn.setReference(pRefCell, pRefValue);
                 pEqn.solve();
 
-                if (nonOrth == nNonOrthCorr)
+                if (piso.finalNonOrthogonalIter())
                 {
                     phi -= pEqn.flux();
                 }
@@ -112,6 +115,7 @@ int main(int argc, char *argv[])
             U.correctBoundaryConditions();
         }
 
+        laminarTransport.correct();
         turbulence->correct();
 
         runTime.write();
