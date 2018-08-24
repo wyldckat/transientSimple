@@ -51,11 +51,13 @@ int main(int argc, char *argv[])
 #   include "createFields.H"
 #   include "initContinuityErrs.H"
 
+    turbulence->validate();
+
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
     Info<< "\nStarting time loop\n" << endl;
 
-    for (runTime++; !runTime.end(); runTime++)
+    while (runTime.loop())
     {
         Info<< "Time = " << runTime.timeName() << nl << endl;
 
@@ -67,21 +69,20 @@ int main(int argc, char *argv[])
         {
             // Momentum predictor
 
-            tmp<fvVectorMatrix> UEqn
+            fvVectorMatrix UEqn
             (
                 fvm::ddt(U)
               + fvm::div(phi, U)
               + turbulence->divDevReff(U)
             );
 
-            UEqn().relax();
+            UEqn.relax();
 
-            solve(UEqn() == -fvc::grad(p));
+            solve(UEqn == -fvc::grad(p));
 
-            p.boundaryField().updateCoeffs();
-            volScalarField rUA = 1.0/UEqn().A();
-            U = rUA*UEqn().H();
-            UEqn.clear();
+            p.boundaryFieldRef().updateCoeffs();
+            volScalarField rUA = 1.0/UEqn.A();
+            U = rUA*UEqn.H();
             phi = fvc::interpolate(U) & mesh.Sf();
             adjustPhi(phi, U, p);
 
