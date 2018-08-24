@@ -1,9 +1,9 @@
 Description
 ===========
 
-Brought to my attention here: [http://www.cfd-online.com/Forums/openfoam/105601-transient-simplefoam.html]
+Brought to my attention here: http://www.cfd-online.com/Forums/openfoam/105601-transient-simplefoam.html
 
-Original source code version from here: [http://openfoamwiki.net/index.php/Main_ContribExamples/PISOvsTransientSimple]
+Original source code version from here: http://openfoamwiki.net/index.php/Main_ContribExamples/PISOvsTransientSimple
 
 This repository brings you minor adjustments to this code for keeping up with the latest OpenFOAM releases. After you run `git clone`, use `git branch -a` to see what OpenFOAM versions have been tested.
 
