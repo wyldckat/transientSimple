@@ -33,21 +33,21 @@ Building with OpenFOAM
 
   1. Download, either using `git` or use the ''Downloads'' pseudo-button on the top right at https://github.com/wyldckat/transientSimple - or simply follow these instructions:
 
-    * For using `git`, clone the repository by using the following commands:
+     * For using `git`, clone the repository by using the following commands:
 
-      ```
-      git clone https://github.com/wyldckat/transientSimple.git
-      cd transientSimple
-      ```
+       ```
+       git clone https://github.com/wyldckat/transientSimple.git
+       cd transientSimple
+       ```
 
-    * For using ZIP, download and unpack a snapshot of the repository by using the following commands:
+     * For using ZIP, download and unpack a snapshot of the repository by using the following commands:
 
-      ```
-      wget https://github.com/wyldckat/transientSimple/archive/master.zip -O transientSimple-master.zip
-      unzip transientSimple-master.zip
-      mv transientSimple-master.zip transientSimple
-      cd transientSimple
-      ```
+       ```
+       wget https://github.com/wyldckat/transientSimple/archive/master.zip -O transientSimple-master.zip
+       unzip transientSimple-master.zip
+       mv transientSimple-master.zip transientSimple
+       cd transientSimple
+       ```
 
   2. Run:
 
