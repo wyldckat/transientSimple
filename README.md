@@ -13,7 +13,7 @@ OpenFOAM(R). Furthermore, this is not a solver meant to be used as a final
 solver, this is only for educational purposes, so use it at your own risk or
 contribute/sponsor to it to standardize and validate the implementation.
 
-'''Note regarding versions''':
+**Note regarding versions**:
 
   * The `master` branch works fine with OpenFOAM 1.7.x, 2.0.x, 2.1.x and 2.2.x.
     It also works with 1.6-ext.
