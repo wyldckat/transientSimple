@@ -70,7 +70,7 @@ int main(int argc, char *argv[])
               + fvm::div(phi, U)
               + turbulence->divDevReff(U)
             );
-            
+
             UEqn().relax();
 
             solve(UEqn() == -fvc::grad(p));
